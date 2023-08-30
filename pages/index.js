@@ -46,6 +46,10 @@ export default function Home() {
   const [error, seterror] = useState('');
   const [success, setsuccess] = useState('');
 
+  useEffect(() => {
+    AOS.init(); // Initialize AOS library for animations
+  }, []);
+  
   function validEmail(email) {
     let re =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
