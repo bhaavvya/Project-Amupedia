@@ -78,13 +78,14 @@ export default function Home() {
         const data = await res.data;
         console.log(data);
         dispatch({
-          type: {
-            task: 'setAlert',
-            alert: { type: 'noti', message: 'Form Submitted Successfully' }
-          }
+          type: 'setAlert',
+          alert: { type: 'noti', message: 'Form Submitted Successfully' }
         });
+        setSuccess('Contact form sent successfully!!');
+        setForm(emptyForm); // Clear the form only on successful submission
       } catch (error) {
         console.log(error);
+        setError('An error occurred while submitting the form.');
       } finally {
         setLoading(false);
         setFirstName('');
@@ -98,6 +99,7 @@ export default function Home() {
         setsuccess('Contact form sent successfully!!');
       }
       setForm(emptyForm);
+      
     }
   };
 
