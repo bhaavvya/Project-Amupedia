@@ -46,9 +46,6 @@ export default function Home() {
   const [error, seterror] = useState('');
   const [success, setsuccess] = useState('');
 
-  useEffect(() => {
-    AOS.init(); // Initialize AOS library for animations
-  }, []);
   
   function validEmail(email) {
     let re =
